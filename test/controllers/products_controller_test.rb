@@ -10,6 +10,11 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "page title is Pragprog Books Online Store" do
+    get products_url
+    assert_select "title", "Pragprog Books Online Store"
+  end
+
   test "should get new" do
     get new_product_url
     assert_response :success
